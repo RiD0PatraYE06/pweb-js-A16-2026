@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Produk</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">Toko<span>Estetika</span></div>
+  </header>
+
+  <section class="intro">
+    <h1>Temukan barang kesayangan kamu dengan harga yang menguntungkan</h1>
+    <p>Data produk DummyJSON API. Pencet kartu untuk melihat detail lengkap.</p>
+  </section>
+
+  <div class="status" id="status">Memuat produk…</div>
+
+  <main class="catalog" id="catalog"></main>
+
+  <div class="load-more">
+    <button id="loadMoreBtn">Tampilkan lebih banyak</button>
+  </div>
+
+  <footer>© 2026 TokoEstetika — data produk dari dummyjson.com/products.</footer>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Tutup">✕</button>
+      <div class="modal-image"><img id="modalImg" src="" alt=""></div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+<script src="js/catalog.js"></script>
+
+</body>
+
+</html>
