@@ -1,0 +1,536 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+
+    /* Color Palette Midnight Premium */
+    --color-navy-dark: #0B1320;
+    --color-navy-slate: #1F3A5F;
+    --color-bg-main: #F7F5F2;
+    --color-bg-card: #FFFFFF;
+    --color-gold: #FFB703;
+    --color-gold-hover: #E0A202;
+    --color-teal: #2A9D8F;
+    --color-text-title: #0B1320;
+    --color-text-body: #4A5568;
+    --color-border: #E2E8F0;
+    --color-error-bg: #FEE2E2;
+    --color-error-text: #991B1B;
+}
+
+/* Base Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+/* ==========================================
+   1. STYLING LOGIN PAGE (LOGIN.HTML)
+   ========================================== */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle at top left, #1F3A5F 0%, #0B1320 40%, #080D17 100%);
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.login-card {
+    background-color: var(--color-bg-card);
+    padding: 36px 32px;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    border-top: 5px solid var(--color-gold);
+}
+
+.login-card .brand-title {
+    font-family: "Fraunces", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-navy-dark);
+    margin-bottom: 12px;
+}
+
+.login-header h2 {
+    margin: 0 0 6px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-navy-dark);
+}
+
+.login-header p {
+    margin: 0 0 24px 0;
+    font-size: 14px;
+    color: var(--color-text-body);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-navy-dark);
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: var(--font-main);
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+    background-color: #FAFAFA;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-navy-slate);
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(31, 58, 95, 0.15);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--color-gold);
+    color: var(--color-navy-dark);
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: var(--font-main);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-gold-hover);
+}
+
+.btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.error-banner {
+    background-color: var(--color-error-bg);
+    color: var(--color-error-text);
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-left: 4px solid var(--color-error-text);
+}
+
+.spinner {
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(11, 19, 32, 0.2);
+    border-top-color: var(--color-navy-dark);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ==========================================
+   2. STYLING KATALOG & HEADER (INDEX.HTML)
+   ========================================== */
+body {
+  margin: 0;
+  background: #f7f5f2;
+  color: #0b1320;
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+}
+
+header {
+  background: #0b1320;
+  color: #f7f5f2;
+  padding: 24px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+header .brand {
+  font-family: "Fraunces", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+header .brand span {
+  color: #ffb703;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-greeting {
+  font-size: 0.9rem;
+  color: #f7f5f2;
+}
+
+.btn-logout {
+  background-color: transparent;
+  color: #f7f5f2;
+  border: 1px solid #e7e2da;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+  background-color: #991b1b;
+  border-color: #991b1b;
+}
+
+.intro {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 44px 48px 8px;
+}
+
+.intro h1 {
+  font-family: "Fraunces", serif;
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #0b1320;
+  max-width: 560px;
+}
+
+.intro p {
+  margin-top: 10px;
+  color: #5c6b7a;
+  max-width: 480px;
+  font-size: 0.98rem;
+}
+
+.status {
+  max-width: 1180px;
+  margin: 24px auto 0;
+  padding: 0 48px;
+  color: #5c6b7a;
+  font-size: 0.9rem;
+  min-height: 1.2em;
+}
+
+.catalog {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 18px 48px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e7e2da;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 12px 24px -14px rgba(11, 19, 32, 0.28);
+  transform: translateY(-3px);
+}
+
+.card .badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #155dd1;
+  color: #ffb703;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+.card .thumb {
+  height: 150px;
+  background: #f7f5f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #e7e2da;
+  overflow: hidden;
+}
+
+.card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 14px;
+}
+
+.card .info {
+  padding: 16px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.card .category {
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #2a9d8f;
+  background: rgba(42, 157, 143, 0.1);
+  padding: 3px 9px;
+  border-radius: 5px;
+  text-transform: lowercase;
+}
+
+.card .name {
+  font-family: "Fraunces", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0b1320;
+  margin-top: 4px;
+  line-height: 1.3;
+  min-height: 2.5em;
+}
+
+.card .meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.card .price {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0b1320;
+}
+
+.card .rating {
+  font-size: 0.85rem;
+  color: #5c6b7a;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.card .rating .star {
+  color: #ffb703;
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 70px;
+}
+
+.load-more button {
+  background: transparent;
+  border: 1.5px solid #0b1320;
+  color: #0b1320;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 12px 30px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.load-more button:hover:not(:disabled) {
+  background: #0b1320;
+  color: #f7f5f2;
+}
+
+footer {
+  background: #0b1320;
+  color: rgba(247, 245, 242, 0.55);
+  text-align: center;
+  padding: 22px;
+  font-size: 0.82rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 19, 32, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 100;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 14px;
+  max-width: 720px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .modal {
+    grid-template-columns: 1fr;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #f7f5f2;
+  color: #0b1320;
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  background: #e7e2da;
+}
+
+.modal-image {
+  background: #f7f5f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-image img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+}
+
+.modal-body {
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-body .category {
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #2a9d8f;
+  background: rgba(42, 157, 143, 0.1);
+  padding: 3px 9px;
+  border-radius: 5px;
+  text-transform: lowercase;
+}
+
+.modal-body h2 {
+  font-family: "Fraunces", serif;
+  font-size: 1.4rem;
+  color: #0b1320;
+  line-height: 1.3;
+}
+
+.modal-body .brand {
+  color: #5c6b7a;
+  font-size: 0.9rem;
+}
+
+.modal-body .price-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.modal-body .price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0b1320;
+}
+
+.modal-body .discount-tag {
+  background: #0b1320;
+  color: #ffb703;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 6px;
+}
+
+.modal-body .desc {
+  color: #5c6b7a;
+  font-size: 0.93rem;
+  line-height: 1.55;
+  margin-top: 4px;
+}
+
+.modal-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+  border-top: 1px solid #e7e2da;
+  padding-top: 14px;
+}
+
+.modal-stats div {
+  font-size: 0.85rem;
+  color: #0b1320;
+}
+
+.modal-stats span {
+  display: block;
+  color: #5c6b7a;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 2px;
+}

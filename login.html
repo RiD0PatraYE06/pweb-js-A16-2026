@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk - TokoEstetika</title>
+  
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+    <!-- CSS Utama -->
+    <link rel="stylesheet" href="css/login-style.css">
+  
+    <!-- JavaScript Eksternal (defer) -->
+    <script src="js/auth.js" defer></script>
+</head>
+
+<body class="login-page">
+    <main class="login-container">
+        <div class="login-card">
+            <!-- Brand Name Header -->
+            <div class="brand-title">TokoEstetika</div>
+
+            <div class="login-header">
+                <h2>Masuk ke akunmu</h2>
+                <p>Gunakan username & password akunmu.</p>
+            </div>
+
+            <!-- Container untuk pesan error visual -->
+            <div id="error-message" class="error-banner hidden"></div>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Masukkan username" required autocomplete="username">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Masukkan password" required autocomplete="current-password">
+                </div>
+
+                <button type="submit" id="btn-submit" class="btn-primary">
+                    <span id="btn-text">Masuk</span>
+                    <!-- Indikator Loading State -->
+                    <span id="btn-loading" class="spinner hidden"></span>
+                </button>
+            </form>
+        </div>
+
+        <!-- emilys/emilyspass -->
+         
+    </main>
+</body>
+</html>

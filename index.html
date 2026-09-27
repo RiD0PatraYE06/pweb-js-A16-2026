@@ -6,13 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Katalog Produk</title>
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index-style.css">
+
+  <script src="js/auth.js" defer></script>
 </head>
 
 <body>
 
   <header>
     <div class="brand">Toko<span>Estetika</span></div>
+
+    <!-- Penambahan Menu User & Tombol Logout -->
+    <div class="user-menu">
+      <span id="user-greeting" class="user-greeting">Selamat datang!</span>
+      <button id="btn-logout" class="btn-logout">Logout</button>
+    </div>
   </header>
 
   <section class="intro">

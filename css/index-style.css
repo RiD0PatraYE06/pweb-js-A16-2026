@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+body {
+  margin: 0;
+  background: #f7f5f2;
+  color: #0b1320;
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+}
+
+header {
+  background: #0b1320;
+  color: #f7f5f2;
+  padding: 24px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+header .brand {
+  font-family: "Fraunces", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+header .brand span {
+  color: #ffb703;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-greeting {
+  font-size: 0.9rem;
+  color: #f7f5f2;
+}
+
+.btn-logout {
+  background-color: transparent;
+  color: #f7f5f2;
+  border: 1px solid #e7e2da;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+  background-color: #991b1b;
+  border-color: #991b1b;
+}
+
+.intro {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 44px 48px 8px;
+}
+
+.intro h1 {
+  font-family: "Fraunces", serif;
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #0b1320;
+  max-width: 560px;
+}
+
+.intro p {
+  margin-top: 10px;
+  color: #5c6b7a;
+  max-width: 480px;
+  font-size: 0.98rem;
+}
+
+.status {
+  max-width: 1180px;
+  margin: 24px auto 0;
+  padding: 0 48px;
+  color: #5c6b7a;
+  font-size: 0.9rem;
+  min-height: 1.2em;
+}
+
+.catalog {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 18px 48px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e7e2da;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 12px 24px -14px rgba(11, 19, 32, 0.28);
+  transform: translateY(-3px);
+}
+
+.card .badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #155dd1;
+  color: #ffb703;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+.card .thumb {
+  height: 150px;
+  background: #f7f5f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #e7e2da;
+  overflow: hidden;
+}
+
+.card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 14px;
+}
+
+.card .info {
+  padding: 16px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.card .category {
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #2a9d8f;
+  background: rgba(42, 157, 143, 0.1);
+  padding: 3px 9px;
+  border-radius: 5px;
+  text-transform: lowercase;
+}
+
+.card .name {
+  font-family: "Fraunces", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0b1320;
+  margin-top: 4px;
+  line-height: 1.3;
+  min-height: 2.5em;
+}
+
+.card .meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.card .price {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0b1320;
+}
+
+.card .rating {
+  font-size: 0.85rem;
+  color: #5c6b7a;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.card .rating .star {
+  color: #ffb703;
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 70px;
+}
+
+.load-more button {
+  background: transparent;
+  border: 1.5px solid #0b1320;
+  color: #0b1320;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 12px 30px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.load-more button:hover:not(:disabled) {
+  background: #0b1320;
+  color: #f7f5f2;
+}
+
+footer {
+  background: #0b1320;
+  color: rgba(247, 245, 242, 0.55);
+  text-align: center;
+  padding: 22px;
+  font-size: 0.82rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 19, 32, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 100;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 14px;
+  max-width: 720px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .modal {
+    grid-template-columns: 1fr;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #f7f5f2;
+  color: #0b1320;
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  background: #e7e2da;
+}
+
+.modal-image {
+  background: #f7f5f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-image img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+}
+
+.modal-body {
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-body .category {
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #2a9d8f;
+  background: rgba(42, 157, 143, 0.1);
+  padding: 3px 9px;
+  border-radius: 5px;
+  text-transform: lowercase;
+}
+
+.modal-body h2 {
+  font-family: "Fraunces", serif;
+  font-size: 1.4rem;
+  color: #0b1320;
+  line-height: 1.3;
+}
+
+.modal-body .brand {
+  color: #5c6b7a;
+  font-size: 0.9rem;
+}
+
+.modal-body .price-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.modal-body .price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0b1320;
+}
+
+.modal-body .discount-tag {
+  background: #0b1320;
+  color: #ffb703;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 6px;
+}
+
+.modal-body .desc {
+  color: #5c6b7a;
+  font-size: 0.93rem;
+  line-height: 1.55;
+  margin-top: 4px;
+}
+
+.modal-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+  border-top: 1px solid #e7e2da;
+  padding-top: 14px;
+}
+
+.modal-stats div {
+  font-size: 0.85rem;
+  color: #0b1320;
+}
+
+.modal-stats span {
+  display: block;
+  color: #5c6b7a;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 2px;
+}
