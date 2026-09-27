@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="css/index-style.css">
 
   <script src="js/auth.js" defer></script>
+
+  <script src="js/features.js" defer></script>  
 </head>
 
 <body>
@@ -16,9 +18,20 @@
   <header>
     <div class="brand">Toko<span>Estetika</span></div>
 
+      <!-- Fitur Pencarian (Search Bar) -->
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Cari produk...">
+    </div>
+    
     <!-- Penambahan Menu User & Tombol Logout -->
     <div class="user-menu">
       <span id="user-greeting" class="user-greeting">Selamat datang!</span>
+
+      <!--  Badge Keranjang & Total Harga -->
+      <span class="cart-info" style="margin: 0 15px; font-weight: bold; color: #f7b32b;">
+        🛒 <span id="cart-badge">0</span> item | <span id="cart-total">$0.00</span>
+      </span>
+
       <button id="btn-logout" class="btn-logout">Logout</button>
     </div>
   </header>
@@ -27,6 +40,24 @@
     <h1>Temukan barang kesayangan kamu dengan harga yang menguntungkan</h1>
     <p>Data produk DummyJSON API. Pencet kartu untuk melihat detail lengkap.</p>
   </section>
+
+  <!-- Section Filter & Sorting -->
+  <div class="filter-section" style="text-align: center; margin-bottom: 20px; gap: 10px; display: flex; justify-content: center;">
+    <select id="categoryFilter">
+      <option value="all">Semua Kategori</option>
+      <option value="beauty">Beauty</option>
+      <option value="fragrances">Fragrances</option>
+      <option value="furniture">Furniture</option>
+      <option value="groceries">Groceries</option>
+    </select>
+
+    <select id="sortFilter">
+      <option value="default">Urutkan</option>
+      <option value="price-asc">Harga Termurah</option>
+      <option value="price-desc">Harga Termahal</option>
+      <option value="rating-desc">Rating Tertinggi</option>
+    </select>
+  </div>
 
   <div class="status" id="status">Memuat produk…</div>
 
@@ -38,7 +69,7 @@
 
   <footer>© 2026 TokoEstetika — data produk dari dummyjson.com/products.</footer>
 
-  <div class="modal-overlay" id="modalOverlay">
+<div class="modal-overlay" id="modalOverlay">
     <div class="modal">
       <button class="modal-close" id="modalClose" aria-label="Tutup">✕</button>
       <div class="modal-image"><img id="modalImg" src="" alt=""></div>
