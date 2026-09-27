@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 
 body {
   margin: 0;
   background: #f7f5f2;
   color: #0b1320;
-  font-family: "Inter", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   line-height: 1.5;
 }
 
@@ -19,7 +19,7 @@ header {
 }
 
 header .brand {
-  font-family: "Fraunces", serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 1.6rem;
   font-weight: 600;
   letter-spacing: 0.2px;
@@ -43,7 +43,7 @@ header .brand span {
 .btn-logout {
   background-color: transparent;
   color: #f7f5f2;
-  border: 1px solid #e7e2da;
+  border: 1px solid #1f3a5f;
   padding: 8px 16px;
   border-radius: 6px;
   font-size: 0.85rem;
@@ -53,8 +53,8 @@ header .brand span {
 }
 
 .btn-logout:hover {
-  background-color: #991b1b;
-  border-color: #991b1b;
+  background-color: #2a9d8f;
+  border-color: #2a9d8f;
 }
 
 .intro {
@@ -64,7 +64,7 @@ header .brand span {
 }
 
 .intro h1 {
-  font-family: "Fraunces", serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 2.1rem;
   font-weight: 600;
   color: #0b1320;
@@ -73,7 +73,7 @@ header .brand span {
 
 .intro p {
   margin-top: 10px;
-  color: #5c6b7a;
+  color: #1f3a5f;
   max-width: 480px;
   font-size: 0.98rem;
 }
@@ -82,7 +82,7 @@ header .brand span {
   max-width: 1180px;
   margin: 24px auto 0;
   padding: 0 48px;
-  color: #5c6b7a;
+  color: #1f3a5f;
   font-size: 0.9rem;
   min-height: 1.2em;
 }
@@ -98,7 +98,7 @@ header .brand span {
 
 .card {
   background: #ffffff;
-  border: 1px solid #e7e2da;
+  border: 1px solid #1f3a5f;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
@@ -117,7 +117,7 @@ header .brand span {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: #155dd1;
+  background: #1f3a5f;
   color: #ffb703;
   font-size: 0.74rem;
   font-weight: 700;
@@ -132,7 +132,7 @@ header .brand span {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid #e7e2da;
+  border-bottom: 1px solid #1f3a5f;
   overflow: hidden;
 }
 
@@ -163,7 +163,7 @@ header .brand span {
 }
 
 .card .name {
-  font-family: "Fraunces", serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   color: #0b1320;
@@ -173,6 +173,7 @@ header .brand span {
 }
 
 .card .meta {
+  flex-direction: column;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -187,7 +188,7 @@ header .brand span {
 
 .card .rating {
   font-size: 0.85rem;
-  color: #5c6b7a;
+  color: #1f3a5f;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -281,7 +282,8 @@ footer {
 }
 
 .modal-close:hover {
-  background: #e7e2da;
+  background: #1f3a5f;
+  color: #f7f5f2;
 }
 
 .modal-image {
@@ -317,14 +319,14 @@ footer {
 }
 
 .modal-body h2 {
-  font-family: "Fraunces", serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 1.4rem;
   color: #0b1320;
   line-height: 1.3;
 }
 
 .modal-body .brand {
-  color: #5c6b7a;
+  color: #1f3a5f;
   font-size: 0.9rem;
 }
 
@@ -351,7 +353,7 @@ footer {
 }
 
 .modal-body .desc {
-  color: #5c6b7a;
+  color: #1f3a5f;
   font-size: 0.93rem;
   line-height: 1.55;
   margin-top: 4px;
@@ -362,7 +364,7 @@ footer {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   margin-top: 10px;
-  border-top: 1px solid #e7e2da;
+  border-top: 1px solid #1f3a5f;
   padding-top: 14px;
 }
 
@@ -373,7 +375,7 @@ footer {
 
 .modal-stats span {
   display: block;
-  color: #5c6b7a;
+  color: #1f3a5f;
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.4px;

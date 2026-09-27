@@ -41,50 +41,12 @@
         const data = await res.json();
         allProducts = data.products || [];
         visibleCount = 0;
-        renderNextBatch();
       } catch (err) {
         statusEl.textContent = "Terjadi kesalahan saat memuat produk: " + err.message;
         catalogEl.innerHTML = "";
       }
     }
-    function renderNextBatch() {
-      const start = visibleCount;
-      const end = Math.min(visibleCount + batasLoad, allProducts.length);
-      const batch = allProducts.slice(start, end);  
-
-      if (start === 0) catalogEl.innerHTML = "";
-
-      batch.forEach(p => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.id = `product-card-${p.id}`;
-        card.dataset.id = p.id;         
-        card.innerHTML = `
-        ${p.discountPercentage ? `<div class="badge">-${Math.round(p.discountPercentage)}%</div>` : ""}
-        <div class="thumb"><img src="${p.thumbnail}" alt="${p.title}" loading="lazy"></div>
-        <div class="info">
-          <span class="category">${p.category}</span>
-          <div class="name">${p.title}</div>
-          <div class="meta">
-            <span class="price">${formatPrice(p.price)}</span>
-            <span class="rating"><span class="star">★</span> ${p.rating}</span>
-          </div>
-        </div>
-      `;
-        catalogEl.appendChild(card);
-      });
-
-      visibleCount = end;
-      updateStatus();
-    }
-
-    function updateStatus() {
-      statusEl.textContent = `Menampilkan ${visibleCount} dari ${allProducts.length} produk`;
-      loadMoreBtn.disabled = visibleCount >= allProducts.length;
-      loadMoreBtn.textContent = visibleCount >= allProducts.length ? "Semua produk ditampilkan" : "Muat lebih banyak";
-    }
-
-    loadMoreBtn.addEventListener("click", renderNextBatch);
+    
     catalogEl.addEventListener("click", (e) => {
       const card = e.target.closest(".card");
       if (!card) return;
