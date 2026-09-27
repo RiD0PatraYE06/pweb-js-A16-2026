@@ -87,8 +87,6 @@
     loadMoreBtn.addEventListener("click", renderNextBatch);
     catalogEl.addEventListener("click", (e) => {
       const card = e.target.closest(".card");
-      console.log(card)
-
       if (!card) return;
       const product = allProducts.find(p => String(p.id) === card.dataset.id);
       if (product) openModal(product);
