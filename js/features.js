@@ -38,6 +38,10 @@ window.addToCart = function (productStr) {
   const existingIndex = cart.findIndex((item) => item.id === product.id);
 
   if (existingIndex > -1) {
+    if(cart[existingIndex].qty >=3){
+      alert("gagal karena kelebihan")
+      return;
+    }
     cart[existingIndex].qty += 1;
   } else {
     cart.push({ ...product, qty: 1 });

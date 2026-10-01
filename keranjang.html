@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+        :root {
+            --navy-deep: #0B1320;
+            --navy: #1F3A5F;
+            --off-white: #F7F5F2;
+            --amber: #FFB703;
+            --teal: #2A9D8F;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--off-white);
+            color: var(--navy-deep);
+            font-family: "Plus Jakarta Sans", sans-serif;
+            line-height: 1.5;
+        }
+
+        header {
+            background: var(--navy-deep);
+            color: var(--off-white);
+            padding: 24px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        header .brand {
+            font-family: "Fraunces", serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+
+        header .brand span {
+            color: var(--amber);
+        }
+
+        .back-link {
+            color: var(--off-white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--navy);
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            background: var(--navy);
+        }
+
+        .wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 44px 24px 60px;
+        }
+
+        .wrap h1 {
+            font-family: "Fraunces", serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            margin: 0 0 6px;
+        }
+
+        .wrap p.sub {
+            color: var(--navy);
+            margin: 0 0 32px;
+            font-size: 0.95rem;
+        }
+
+        #cartList {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .cart-row {
+            background: #ffffff;
+            border: 1px solid var(--navy);
+            border-radius: 10px;
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .cart-row .row-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .cart-row .row-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 0 0 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .cart-row .row-meta {
+            color: var(--navy);
+            font-size: 0.85rem;
+        }
+
+        .cart-row .row-subtotal {
+            font-weight: 700;
+            font-size: 1rem;
+            white-space: nowrap;
+            min-width: 140px;
+            text-align: right;
+        }
+
+        .remove-btn {
+            background: transparent;
+            border: 1.5px solid var(--navy);
+            color: var(--navy);
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.18s ease;
+        }
+
+        .remove-btn:hover {
+            background: #b3261e;
+            border-color: #b3261e;
+            color: #ffffff;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            border: 1.5px dashed var(--navy);
+            border-radius: 10px;
+            color: var(--navy);
+        }
+
+        .empty-state a {
+            color: var(--teal);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .summary {
+            margin-top: 28px;
+            border-top: 1px solid var(--navy);
+            padding-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .summary .total-line {
+            font-size: 1.1rem;
+        }
+
+        .summary .total-line strong {
+            font-size: 1.4rem;
+            display: block;
+        }
+
+        .summary-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .clear-btn {
+            background: transparent;
+            border: 1.5px solid var(--navy-deep);
+            color: var(--navy-deep);
+            font-weight: 600;
+            font-size: 0.88rem;
+            padding: 11px 20px;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .clear-btn:hover {
+            background: var(--navy-deep);
+            color: var(--off-white);
+        }
+
+        .checkout-btn {
+            background: var(--amber);
+            border: none;
+            color: var(--navy-deep);
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 12px 22px;
+            border-radius: 999px;
+            cursor: pointer;
+        }
+
+        @media (max-width:520px) {
+            header {
+                padding: 18px 20px;
+                flex-wrap: wrap;
+            }
+
+            .wrap {
+                padding: 32px 18px 40px;
+            }
+
+            .cart-row {
+                flex-wrap: wrap;
+            }
+
+            .cart-row .row-subtotal {
+                text-align: left;
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">Toko<span>IT</span></div>
+        <a class="back-link" href="index.html">← Kembali belanja</a>
+    </header>
+
+    <div class="wrap">
+        <h1>Keranjang Belanja</h1>
+        <p class="sub">Barang yang sudah kamu pesan. Kamu bisa menghapus barang dari sini.</p>
+
+        <div id="cartList"></div>
+
+        <div class="summary" id="summary" style="display:none;">
+            <div class="total-line">
+                Total (<span id="totalItems">0</span> item)
+                <strong id="totalPrice">IDR 0</strong>
+            </div>
+            <div class="summary-actions">
+                <button class="clear-btn" id="clearBtn">Kosongkan keranjang</button>
+                <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const CART_KEY = "cart_items";
+
+        const cartListEl = document.getElementById("cartList");
+        const summaryEl = document.getElementById("summary");
+        const totalItemsEl = document.getElementById("totalItems");
+        const totalPriceEl = document.getElementById("totalPrice");
+
+        function formatPrice(n) {
+            var harga = Number(n) * 17900;
+            return "IDR " + harga.toLocaleString("id-ID");
+        }
+
+        function getCart() {
+            const data = localStorage.getItem(CART_KEY);
+            return data ? JSON.parse(data) : [];
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem(CART_KEY, JSON.stringify(cart));
+        }
+
+        function renderCart() {
+            const cart = getCart();
+
+            if (cart.length === 0) {
+                cartListEl.innerHTML = `
+        <div class="empty-state">
+          Keranjang kamu masih kosong.<br>
+          <a href="index.html">Lihat katalog produk</a>
+        </div>
+      `;
+                summaryEl.style.display = "none";
+                return;
+            }
+
+            cartListEl.innerHTML = "";
+            let totalItems = 0;
+            let totalPrice = 0;
+
+            cart.forEach(item => {
+                totalItems += item.qty;
+                totalPrice += item.price * item.qty;
+
+                const row = document.createElement("div");
+                row.className = "cart-row";
+                row.dataset.id = item.id;
+                row.innerHTML = `
+        <div class="row-info">
+          <p class="row-title">${item.title}</p>
+          <p class="row-meta">${formatPrice(item.price)} &times; ${item.qty}</p>
+        </div>
+        <div class="row-subtotal">${formatPrice(item.price * item.qty)}</div>
+        <button class="remove-btn" data-id="${item.id}">Hapus</button>
+      `;
+                cartListEl.appendChild(row);
+            });
+
+            totalItemsEl.textContent = totalItems;
+            totalPriceEl.textContent = formatPrice(totalPrice);
+            summaryEl.style.display = "flex";
+        }
+
+        cartListEl.addEventListener("click", (e) => {
+            const btn = e.target.closest(".remove-btn");
+            if (!btn) return;
+
+            const id = Number(btn.dataset.id);
+            const cart = getCart().filter(item => item.id !== id);
+            saveCart(cart);
+            renderCart();
+        });
+
+        document.getElementById("clearBtn").addEventListener("click", () => {
+            if (confirm("Kosongkan semua barang dari keranjang?")) {
+                saveCart([]);
+                renderCart();
+            }
+        });
+
+        document.getElementById("checkoutBtn").addEventListener("click", () => {
+            alert("Fitur checkout belum tersedia.");
+        });
+
+        renderCart();
+    </script>
+
+</body>
+
+</html>
